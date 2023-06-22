@@ -1,2 +1,2 @@
 # Team-Beta
-x86 Disassembler
+Student IQ Test
