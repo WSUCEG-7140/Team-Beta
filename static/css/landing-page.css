@@ -1,3 +1,4 @@
+/* Global styles */
 body {
     background-color: #f2f2f2;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     font-family: Arial, sans-serif;
   }
   
+  /* Main container styles */
   .container {
     max-width: 600px;
     margin: 0 auto;
@@ -14,6 +16,7 @@ body {
     border-radius: 5px;
   }
   
+  /* Main heading styles */
   h1 {
     text-align: center;
     color: #41b883;
@@ -21,6 +24,7 @@ body {
     margin-bottom: 20px;
   }
   
+  /* Link styles */
   a {
     display: inline-block;
     color: #35495e;
@@ -29,30 +33,35 @@ body {
     font-size: 16px;
   }
   
+  /* Hover effect for links */
   a:hover {
     color: #41b883;
   }
   
+  /* Error message styles */
   .error-message {
     color: red;
     text-align: center;
   }
-
+  
+  /* Text section styles */
   .text-section {
     margin-top: 30px;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
   }
-
+  
+  /* Subheading styles */
   h2 {
     color: #41b883;
     font-size: 20px;
     margin-bottom: 10px;
   }
-
+  
+  /* Paragraph styles */
   p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 15px;
-  }
+  }  
