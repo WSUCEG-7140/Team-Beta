@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Dashboard</h1>
+    <div class="dashboard-section">
+      <div class="box">
+        <h2 class="box-title">Name Box</h2>
+        <p class="box-content">Your name: {{ username }}</p>
+      </div>
+      <div class="box">
+        <h2 class="box-title">Instructions</h2>
+        <div class="box-content">
+          <p>Instruction:</p>
+          <p>1. There is a timer for each question.</p>
+          <p>2. Total 10 questions will be shown.</p>
+          <p>All the best!</p>
+        </div>
+      </div>
+      <form method="GET" action="{{ url_for('quiz') }}">
+        <button type="submit" class="btn-take-quiz">Take the Quiz</button>
+      </form>      
+    </div>
+  </div>
+</body>
+</html>
