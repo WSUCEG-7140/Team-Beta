@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Dashboard</h1>
+    <div class="dashboard-section">
+      <div class="box">
+        <h2 class="box-title">Name Box</h2>
+        <p class="box-content">Your name: {{ username }}</p>
+      </div>
+    </div>
+</body>
+</html>
