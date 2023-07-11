@@ -20,6 +20,10 @@
           <p>2. Total 10 questions will be shown.</p>
           <p>All the best!</p>
         </div>
-  </div>
+      </div>
+      <form method="GET" action="{{ url_for('quiz') }}">
+        <button type="submit" class="btn-take-quiz">Take the Quiz</button>
+      </form>      
+    </div>
 </body>
 </html>
