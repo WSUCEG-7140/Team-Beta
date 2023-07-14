@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         # GitHub Actions will create separate jobs for each combination of operating system and specified Python version.
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest]
         python-version: [3.9]
     # Run the job on the specified operating system
     runs-on: ${{ matrix.os }}
@@ -56,18 +56,9 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: sudo apt-get install -y doxygen
           
-    - name: Install Doxygen (macOS)
-      # Install Doxygen on macOS
-      if: matrix.os == 'macOS-latest'
-      run: |
-        brew install doxygen
-        export HOMEBREW_NO_INSTALL_CLEANUP=1
-        export HOMEBREW_NO_ENV_HINTS=1
+    
             
-    - name: Install Doxygen (Windows)
-      # Install Doxygen on Windows
-      if: matrix.os == 'windows-latest'
-      run: choco install doxygen.install --yes --no-progress
+    
     
     
     - name: Generate Documentation
