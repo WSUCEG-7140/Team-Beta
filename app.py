@@ -62,9 +62,12 @@ def login():                                        # registeration logic
 
 
 
-@app.route('/dashboard')
+@app.route('/dashboard')    # created the logic for our dashboard
 def dashboard():
-   return dashboard
+    # Retrieve the username from the session
+    username = session.get('username')
+
+    return render_template('dashboard.html', username=username)
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
