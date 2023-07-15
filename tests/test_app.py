@@ -13,3 +13,7 @@ def test_register():
     response = app.test_client().post('/register', data={"username": "New_User", "password": "NewPassword"})
     assert response.status_code == 200
 
+def test_login_page():
+    response = app.test_client().get('/login')
+    assert response.status_code == 200
+
