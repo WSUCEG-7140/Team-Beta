@@ -30,10 +30,6 @@ Key Features:-
 ```
 
 To experience the IQ Test Web App, simply clone this repo into your local environment. Once downloaded, you can immediately begin taking the IQ test and receive instant feedback on your cognitive abilities.
-## Screenshots
-
-![App Screenshot](https://i.imgur.com/LYtTH92.png)
-
 
 ## Requirements
 
