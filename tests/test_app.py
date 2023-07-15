@@ -24,3 +24,7 @@ def test_login():
 def test_dashboard():
     response = app.test_client().get('/dashboard')
     assert b"<h1>Welcome to the Dashboard</h1>" in response.data
+
+def test_quiz_page():
+    response = app.test_client().get('/quiz')
+    assert b"<h1>Quiz</h1>" in response.data
