@@ -20,3 +20,7 @@ def test_login_page():
 def test_login():
     response = app.test_client().post('/login', data={"username": "New_User", "password": "NewPassword"})
     assert response.status_code == 302
+
+def test_dashboard():
+    response = app.test_client().get('/dashboard')
+    assert b"<h1>Welcome to the Dashboard</h1>" in response.data
