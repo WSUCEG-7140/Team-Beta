@@ -17,3 +17,6 @@ def test_login_page():
     response = app.test_client().get('/login')
     assert response.status_code == 200
 
+def test_login():
+    response = app.test_client().post('/login', data={"username": "New_User", "password": "NewPassword"})
+    assert response.status_code == 302
