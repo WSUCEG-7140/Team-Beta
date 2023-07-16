@@ -1,0 +1,52 @@
+/* quiz.css */
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  color: #41b883;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.option-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.btn-submit {
+  display: block;
+  margin-top: 20px;
+  background-color: #41b883;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
