@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from quiz_analysis import analyze_strengths, analyze_weaknesses, get_user_quiz_performance_data
 
 
 app = Flask(__name__)
@@ -12,90 +11,74 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
-    with app.app_context():
-        db.create_all()
+with app.app_context():
+    db.create_all()
 
-    @app.route('/')
-    def index():
-        return render_template('index.html')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    @app.route('/register', methods=['GET', 'POST'])
-    def register():                           # registeration logic
-        if request.method == 'POST':
-            username = request.form['username']
-            password = request.form['password']
+@app.route('/register', methods=['GET', 'POST'])
+def register():                           # registeration logic
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
 
-            # Check if the username already exists
-            existing_user = User.query.filter_by(username=username).first()
-            if existing_user:
-                error = 'Username already exists. Please choose a different username.'
-                return render_template('register.html', error=error)
+        # Check if the username already exists
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            error = 'Username already exists. Please choose a different username.'
+            return render_template('register.html', error=error)
 
-            # Insert the new user into the database
-            new_user = User(username=username, password=password)
-            db.session.add(new_user)
-            db.session.commit()
+        # Insert the new user into the database
+        new_user = User(username=username, password=password)
+        db.session.add(new_user)
+        db.session.commit()
 
-            return redirect(url_for('login'))
+        return redirect(url_for('login'))
 
-        return render_template('register.html')
+    return render_template('register.html')
 
-    @app.route('/login', methods=['GET', 'POST'])
-    def login():                                        # registeration logic
-        if request.method == 'POST':
-            username = request.form['username']
-            password = request.form['password']
+@app.route('/login', methods=['GET', 'POST'])
+def login():                                        # registeration logic
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
 
-            # Retrieve the user from the database
-            user = User.query.filter_by(username=username).first()
+        # Retrieve the user from the database
+        user = User.query.filter_by(username=username).first()
 
-            if user and user.password == password:
-                # Successful login
-                # Store the username in the session
-                session['username'] = username
+        if user and user.password == password:
+            # Successful login
+            # Store the username in the session
+            session['username'] = username
 
-                return redirect(url_for('dashboard'))
+            return redirect(url_for('dashboard'))
 
-            error = 'Invalid username or password.'
-            return render_template('login.html', error=error)
+        error = 'Invalid username or password.'
+        return render_template('login.html', error=error)
 
-        return render_template('login.html')
+    return render_template('login.html')
 
 
 
-    @app.route('/dashboard')    # created the logic for our dashboard
-    def dashboard():
-        # Retrieve the username from the session
-        username = session.get('username')
+@app.route('/dashboard')    # created the logic for our dashboard
+def dashboard():
+    # Retrieve the username from the session
+    username = session.get('username')
 
-        return render_template('dashboard.html', username=username)
+    return render_template('dashboard.html', username=username)
+
+@app.route('/quiz', methods=['GET', 'POST'])
+def quiz():
     
-    @app.route("/analyze-review")
-    def analyze_review():
-        user_id = request.args.get("user_id")
-        quiz_id = request.args.get("quiz_id")
-
-        # Get the user's quiz performance data.
-        performance_data = get_user_quiz_performance_data(user_id, quiz_id)
-
-        # Analyze the performance data.
-        strengths = analyze_strengths(performance_data)
-        weaknesses = analyze_weaknesses(performance_data)
-
-        # Render the analysis and review page.
-        return render_template("analyze_review.html", strengths=strengths, weaknesses=weaknesses)
-
-
-    @app.route('/quiz', methods=['GET', 'POST'])
-    def quiz():
-        
-        return interpretation
+    return interpretation
 
 
 
 
-    @app.route('/result')
-        return render_template('result.html')
+@app.route('/result')
+    return render_template('result.html')
 
 
 if __name__ == '__main__':
