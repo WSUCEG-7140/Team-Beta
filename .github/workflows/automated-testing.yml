@@ -4,8 +4,8 @@ name: Tests and Documentation
 
 on:
   # Trigger the workflow whenever a pull request is opened or updated
-  pull_request:
-    branches: [ "*" ]
+  - pull_request
+  - push 
 
 jobs:
   test:
