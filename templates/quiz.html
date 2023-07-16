@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quiz.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz</h1>
+    <form method="POST" action="{{ url_for('quiz') }}">
+      {% for question in questions %}
+      <div class="question">
+        {% set question_index = loop.index0 %}
+        {% for option in question['options'] %}
+          {% if loop.index == 1 %}
+          <p class="option-label">{{ option }}</p>
+          {% else %}
+          <label class="option-label">
+            <input type="radio" name="question_{{ question_index }}" value="{{ option }}"
+              {% if option == selected_answers[question_index] %} checked {% endif %}>
+            {{ option }}
+          </label>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn-submit">Submit</button>
+    </form>
+    
+    
+    
+    
+  </div>
+</body>
+</html>
