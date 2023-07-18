@@ -19,18 +19,26 @@ The IQ Test Web App is a user-friendly and interactive online platform designed 
    - Pie Chart: Users can visualize their overall performance in the form of a pie chart, displaying the distribution of their scores across different IQ ranges.
    - Global User Comparison: Users can compare their IQ scores with global users, gaining insights into their relative performance on a global scale.
 
-## Getting Started
+## Installation
 
+To run the IQ Test Web App locally, follow these steps:
+
+# Clone the repository:
 ```bash
-[Git Clone] -> gh repo clone WSUCEG-7140/Team-Beta
+[Git Clone] -> https://github.com/WSUCEG-7140/Team-Beta.git
 ```
 
 To experience the IQ Test Web App, simply clone this repo into your local environment. Once downloaded, you can immediately begin taking the IQ test and receive instant feedback on your cognitive abilities.
 
-## Requirements
+# Install the necessary dependencies:
+   - Python 3.9
+   - Flask
+   - HTML/CSS
+   - CSV module
+   - Vectorize module
+   - Pickle module
 
-The IQ Test Web App requires a modern web browser with JavaScript enabled. You also need to to have react, python (Flask frameworks)and some libraries installed in your environment, although we use vscode as an editor but you can use anything. 
-## Going Live
+# Going Live:
 
 Go live with app.py using python 
 
@@ -39,11 +47,4 @@ Go live with app.py using python
   localhost:5000
 ```
     
-## Contribution
-
-Contributions are always welcome!
-
-We welcome contributions from the community to further enhance the IQ Test Web App. If you encounter any issues or have ideas for new features, please submit them via the provided issue tracker..
-
-Please adhere to this project's `code of conduct`.
 
