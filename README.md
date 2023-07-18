@@ -2,26 +2,22 @@
 
 # IQ Test Web App
 
-The IQ Test Web App is a user-friendly and interactive online platform designed to assess and evaluate an individual's cognitive abilities. This web application provides a range of challenging and thought-provoking questions that test various aspects of intelligence, such as logical reasoning, problem-solving, pattern recognition, and analytical thinking.
+The IQ Test Web App is a user-friendly and interactive online platform designed to assess and evaluate an individual's cognitive abilities and developed using Python, HTML, Flask, and various other modules such as CSV, Vectorize, Pickle, and JSON. This web application provides a range of challenging and thought-provoking questions that test various aspects of intelligence, such as logical reasoning, problem-solving, pattern recognition, and analytical thinking.  It incorporates common features such as registration, login, dashboard, quiz, and result visualization with bar charts, pie charts, and global user comparisons.
 
-Key Features:-
+# Key Features:-
 
 1. Multiple Question Types: The IQ Test Web App offers a diverse range of question types, including numerical puzzles, visual patterns, logical sequences, and verbal reasoning, ensuring a comprehensive evaluation of cognitive skills.
 
-2. Customizable Difficulty Levels: Users can select their preferred difficulty level, ranging from easy to challenging, based on their confidence and previous experience with IQ testing.
+2. Timed Assessments: The app incorporates a timer feature that adds a time constraint to each question, creating a sense of urgency and simulating real-time IQ testing conditions.
 
-3. Timed Assessments: The app incorporates a timer feature that adds a time constraint to each question, creating a sense of urgency and simulating real-time IQ testing conditions.
+3. Immediate Feedback and Scoring: Upon answering each question, users receive instant feedback on their response, along with an accurate scoring system that quantifies their performance.
 
-4. Immediate Feedback and Scoring: Upon answering each question, users receive instant feedback on their response, along with an accurate scoring system that quantifies their performance.
+4. Detailed Results and Analysis: At the end of the IQ test, users are presented with a comprehensive summary of their results, including an overall IQ score and performance breakdown across different cognitive areas.
 
-5. Detailed Results and Analysis: At the end of the IQ test, users are presented with a comprehensive summary of their results, including an overall IQ score and performance breakdown across different cognitive areas.
-
-6. Progress Tracking and History: The web app keeps track of users' test history, allowing them to monitor their progress over time and compare results from previous attempts.
-
-7. User-Friendly Interface: The intuitive and visually appealing interface ensures a seamless and engaging user experience, enhancing the overall enjoyment and motivation to complete the IQ test.
-
-
-
+5. Visualizations:
+   - Bar Chart: Users can view graphical representations of their performance through bar charts, showing their scores in different categories or sections of the IQ test.
+   - Pie Chart: Users can visualize their overall performance in the form of a pie chart, displaying the distribution of their scores across different IQ ranges.
+   - Global User Comparison: Users can compare their IQ scores with global users, gaining insights into their relative performance on a global scale.
 
 ## Getting Started
 
