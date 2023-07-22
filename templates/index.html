@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>IQ Test</title>
-  <link rel="stylesheet" type="text/css" href="../static/css/landing-page.css">  # link to our css file
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">  
 </head>
 <body>
   <!-- Main container -->
@@ -11,8 +11,17 @@
     <h1>IQ Test</h1>
 
     <!-- Navigation links -->
-    <a href="{{ url_for('register') }}">Register</a> |
-    <a href="{{ url_for('login') }}">Login</a>
+    <div class="navbar">
+      <div class="navbar-left">
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+      </div>
+      <div class="navbar-right">
+        <a class="help-link" href="{{ url_for('contact_us') }}">
+          Need Help
+        </a>
+      </div>
+    </div>
 
     <!-- Text section -->
     <div class="text-section">
@@ -34,6 +43,7 @@
         Take the IQ Test today and challenge your brain!
         Unlock your intellectual potential and embark on a journey of continuous improvement.
       </p>
+    </div>
     </div>
   </div>
 </body>
