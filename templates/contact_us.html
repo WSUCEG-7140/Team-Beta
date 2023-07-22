@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <p>Feel free to send us your questions or requests for help!</p>
+
+  <!-- Modal -->
+  <div class="modal" id="messageModal">
+    <div class="modal-content">
+      <p id="modalMessage"></p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <form id="contactForm" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Your JavaScript code here -->
+  <script>
+    const contactForm = document.getElementById("contactForm");
+    const modal = document.getElementById("messageModal");
+    const modalMessage = document.getElementById("modalMessage");
+    const closeModal = document.getElementById("closeModal");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Send the form data to the backend (replace this with your own form submission logic)
+      fetch("/submitContactForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+      .then(() => {
+        // Show the modal with the thank you message
+        modalMessage.textContent = "Thank you! We will connect to you shortly.";
+        modal.style.display = "block";
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      // Close the modal when the "Close" button is clicked
+      modal.style.display = "none";
+    });
+  </script>
+</body>
+</html>
