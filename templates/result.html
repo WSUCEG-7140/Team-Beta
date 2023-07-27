@@ -1,4 +1,4 @@
-"""@ref R72_0"""
+""" @ref R72_0 """
 
 <!DOCTYPE html>
 <html>
@@ -31,29 +31,29 @@
 
   <script>
     // Get the chart data from the Flask template
-    var barChartData = {{ bar_chart_data | tojson }};   <!-- Retrieve the data for the bar chart -->
-    var pieChartData = {{ pie_chart_data | tojson }};   <!-- Retrieve the data for the pie chart -->
-    var lineChartData = {{ line_chart_data | tojson }};   <!-- Retrieve the data for the line chart -->
+    var barChartData = {{ bar_chart_data | tojson }};   // Retrieve the data for the bar chart 
+    var pieChartData = {{ pie_chart_data | tojson }};   // Retrieve the data for the pie chart 
+    var lineChartData = {{ line_chart_data | tojson }};  // Retrieve the data for the line chart 
 
     // Create the bar chart using Chart.js
     var barChartCanvas = document.getElementById('barChart').getContext('2d');
     new Chart(barChartCanvas, {
-      type: 'bar',   <!-- Type of chart to be created -->
+      type: 'bar',  // Type of chart to be created 
       data: {
-        labels: ['Cognitive', 'Intellectual', 'Reasonal', 'Aptitude'],   <!-- Labels for the bar chart -->
+        labels: ['Cognitive', 'Intellectual', 'Reasonal', 'Aptitude'], // Labels for the bar chart
         datasets: [{
-          label: 'Scores',   <!-- Label for the dataset -->
-          data: barChartData.map(item => item.value),   <!-- Retrieve the data values for the bar chart -->
-          backgroundColor: 'rgba(54, 162, 235, 0.5)',   <!-- Background color for the bars -->
-          borderColor: 'rgba(54, 162, 235, 1)',   <!-- Border color for the bars -->
-          borderWidth: 1   <!-- Width of the border for the bars -->
+          label: 'Scores',  // Label for the dataset
+          data: barChartData.map(item => item.value),   // Retrieve the data values for the bar chart 
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',   // Background color for the bars 
+          borderColor: 'rgba(54, 162, 235, 1)',   // Border color for the bars 
+          borderWidth: 1   // Width of the border for the bars 
         }]
       },
       options: {
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true   <!-- Start the Y-axis at zero to ensure data is displayed properly -->
+              beginAtZero: true   // Start the Y-axis at zero to ensure data is displayed properly 
             }
           }]
         }
