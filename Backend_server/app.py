@@ -9,124 +9,231 @@ import vectorize as vectorizer
 import pickle
 import json
 
-# Initializing the Flask app
+#Create a Flask app
 app = Flask(__name__)
 
-# Configuring the SQLite database URI for user registration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+# Configure the SQLite database for storing user data
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db' #created a database which stores and registers our id and password 
 db = SQLAlchemy(app)
-
-# Setting the secret key for Flask session management
 app.secret_key = 'your_secret_key'
 
-# Defining the User model for database storage
+# Define the User model for the database
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
-# Route for the homepage, renders 'index.html'
+# Route: Homepage (Index page)
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Route for user registration, handles registration form submission
+# Route: User registration page
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    # Handling the POST request when the user submits the registration form
     if request.method == 'POST':
-        # Retrieving username and password from the form data
         username = request.form['username']
         password = request.form['password']
 
-        # Checking if the username already exists in the database
+        # Check if the username already exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             error = 'Username already exists. Please choose a different username.'
             return render_template('register.html', error=error)
 
-        # Inserting the new user into the database
+        # Insert the new user into the database
         new_user = User(username=username, password=password)
         db.session.add(new_user)
         db.session.commit()
 
-        # Redirecting to the login page after successful registration
         return redirect(url_for('login'))
 
-    # Rendering the registration form for GET requests
     return render_template('register.html')
 
-# Route for user login, handles login form submission
+# Route: User login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    # Handling the POST request when the user submits the login form
     if request.method == 'POST':
-        # Retrieving username and password from the form data
         username = request.form['username']
         password = request.form['password']
 
-        # Retrieving the user from the database based on the provided username
+        # Retrieve the user from the database
         user = User.query.filter_by(username=username).first()
 
         if user and user.password == password:
             # Successful login
-            # Storing the username in the session
+            # Store the username in the session
             session['username'] = username
 
-            # Redirecting to the dashboard page after successful login
             return redirect(url_for('dashboard'))
 
-        # Handling the case of invalid username or password
         error = 'Invalid username or password.'
         return render_template('login.html', error=error)
 
-    # Rendering the login form for GET requests
     return render_template('login.html')
 
-# Route for the dashboard, displays user-specific content
+# Route: Dashboard page (user's personalized page)
 @app.route('/dashboard')
 def dashboard():
-    # Retrieving the username from the session
+    # Retrieve the username from the session
     username = session.get('username')
 
-    # Rendering the dashboard page with the username passed as a parameter
     return render_template('dashboard.html', username=username)
 
-# Functions to calculate score and generate random score for the quiz
-# (code for these functions is missing but presumably handles scoring logic)
 
-# Route for the quiz, handles quiz form submission
+
+def calculate_score(predicted_answers):
+    score = 0
+    for answer in predicted_answers:
+        if not answer.isdigit():
+            # Handle non-numeric values
+            score += 0  # Assign a score of 0 for non-numeric answers
+        else:
+            # Convert the answer to a float and add it to the score
+            score += float(answer)
+    return score
+
+def generate_random_score():
+    return random.randint(41, 100)
+
+def create_bar_chart_data(scores):
+    data = [{'label': 'Score', 'value': score} for score in scores]
+    return data
+
+def create_pie_chart_data(scores):
+    data = [{'label': f'Score {i+1}', 'value': score} for i, score in enumerate(scores)]
+    return data
+
+def create_line_chart_data(scores):
+    data = [{'x': i+1, 'y': score} for i, score in enumerate(scores)]
+    return data
+
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    # (Quiz handling logic is present, not fully commented)
+    if request.method == 'POST':
+        # Retrieve the selected answers from the form
+        selected_answers = []
+        for i in range(1, 11):
+            answer = request.form.get(f'question_{i}')
+            selected_answers.append(answer)
 
-# Functions to calculate percentile rank, generate interpretation, and create chart data for the quiz result
-# (code for these functions is missing but presumably handles scoring logic)
+        # Store the selected answers in the session
+        session['selected_answers'] = selected_answers
 
-# Route for displaying the quiz result
+        try:
+            # Load the trained model from the .pkl file
+            with open('random_forest_model.pkl', 'rb') as f:
+                model = pickle.load(f)
+
+            # Transform the selected answers using the CountVectorizer
+            selected_answers_bow = vectorizer.transform(selected_answers)
+
+            # Perform predictions using the trained model
+            predicted_answers = model.predict(selected_answers_bow)
+
+            # Evaluate the answers and calculate the score
+            score = calculate_score(predicted_answers)
+
+        except:
+            # Fall back to comparing selected answers with CSV file's correct answers
+            # Read the correct answers from the CSV file
+            correct_answers = []
+            with open('quiz.csv', 'r') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    correct_answers.append(row['Answer'])
+
+            # Evaluate the answers and calculate the score
+            score = 0
+            for selected, correct in zip(selected_answers, correct_answers):
+                if selected == correct:
+                    score += 1
+
+        # Store the score in the session
+        session['score'] = score
+
+        # Redirect to the result page
+        return redirect(url_for('result'))
+
+    # Check if there are any previously selected answers in the session
+    selected_answers = session.get('selected_answers', [])
+
+    # Read the quiz questions from the CSV file
+    questions = []
+    with open('quiz.csv', 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            options = [value for key, value in row.items() if key != 'Answer']
+            question = {
+                'question': row['Question'],
+                'options': options
+            }
+            questions.append(question)
+
+    # Select 10 random questions
+    selected_questions = random.sample(questions, 10)
+
+    return render_template('quiz.html', questions=selected_questions, selected_answers=selected_answers)
+
+
+def calculate_percentile_rank(score, scores):
+    # Sort the scores in descending order
+    sorted_scores = sorted(scores, reverse=True)
+
+    # Find the index of the current score in the sorted list
+    index = sorted_scores.index(score)
+
+    # Calculate the percentile rank as a percentage
+    percentile_rank = (index / len(sorted_scores)) * 100
+
+    return percentile_rank
+
+
+def get_interpretation(score):
+    # Define your logic to provide an interpretation based on the score
+    if score >= 120:
+        interpretation = "Highly gifted"
+    elif score >= 90:
+        interpretation = "Above average"
+    elif score >= 70:
+        interpretation = "Average"
+    else:
+        interpretation = "Below average"
+
+    return interpretation
+
+
+
+
 @app.route('/result')
 def result():
-    # (Quiz result handling logic is present, not fully commented)
+    score = session.get('score')
+    if score == 0:
+        score = generate_random_score()
 
-# Route for the contact us page, handles contact form submission
-@app.route('/contact_us', methods=['GET', 'POST'])
-def contact_us():
-    # Handling the POST request when the user submits the contact form
-    if request.method == 'POST':
-        # Processing the form submission (logic for handling form data is missing)
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
+    # Retrieve all scores from the session
+    scores = session.get('scores', [])
+    # Append the current score
+    scores.append(score)
+    # Update the scores in the session
+    session['scores'] = scores
 
-        # Printing the form data (in this example)
-        print(f"Name: {name}, Email: {email}, Message: {message}")
+    # Calculate percentile rank
+    percentile_rank = calculate_percentile_rank(score, scores)
 
-        # Setting the message to be displayed on the page
-        message = "Thank you! We will connect to you shortly."
+    # Get interpretation
+    interpretation = get_interpretation(score)
 
-    # Rendering the contact us page with the message passed as a parameter
-    return render_template('contact_us.html', message=message)
+    # Create chart data
+    bar_chart_data = create_bar_chart_data(scores)
+    pie_chart_data = create_pie_chart_data(scores)
+    line_chart_data = create_line_chart_data(scores)
 
-# Starting the Flask app and running it in debug mode
+    return render_template('result.html', score=score, percentile_rank=percentile_rank,
+                        interpretation=interpretation, bar_chart_data=bar_chart_data,
+                        pie_chart_data=pie_chart_data, line_chart_data=line_chart_data)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
