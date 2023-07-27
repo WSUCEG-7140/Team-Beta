@@ -1,35 +1,33 @@
+"""@ref R73_0"""
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Quiz</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quiz.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='quiz.css') }}">   <!-- Link to the external CSS file for styling -->
 </head>
 <body>
-  <div class="container">
-    <h1>Quiz</h1>
-    <form method="POST" action="{{ url_for('quiz') }}">
-      {% for question in questions %}
-      <div class="question">
-        {% set question_index = loop.index0 %}
-        {% for option in question['options'] %}
-          {% if loop.index == 1 %}
-          <p class="option-label">{{ option }}</p>
-          {% else %}
-          <label class="option-label">
+  <div class="container">   <!-- Main container for the quiz content -->
+    <h1>Quiz</h1>   <!-- Main heading for the quiz page -->
+    <form method="POST" action="{{ url_for('quiz') }}">   <!-- Form to submit the quiz data to the 'quiz' endpoint using POST method -->
+      {% for question in questions %}   <!-- Loop through each question in the 'questions' data -->
+      <div class="question">   <!-- Container for each question -->
+        {% set question_index = loop.index0 %}   <!-- Set the question index starting from 0 -->
+        {% for option in question['options'] %}   <!-- Loop through each option in the current question -->
+          {% if loop.index == 1 %}   <!-- Check if it is the first option, used to display the question -->
+          <p class="option-label">{{ option }}</p>   <!-- Display the question as a paragraph with the option text -->
+          {% else %}   <!-- For the rest of the options, used to display radio buttons -->
+          <label class="option-label">   <!-- Label for each option with a radio button -->
             <input type="radio" name="question_{{ question_index }}" value="{{ option }}"
-              {% if option == selected_answers[question_index] %} checked {% endif %}>
-            {{ option }}
+              {% if option == selected_answers[question_index] %} checked {% endif %}>   <!-- Radio input for the option, check if it is the selected answer -->
+            {{ option }}   <!-- Display the option text -->
           </label>
           {% endif %}
         {% endfor %}
       </div>
       {% endfor %}
-      <button type="submit" class="btn-submit">Submit</button>
-    </form>
-    
-    
-    
-    
+      <button type="submit" class="btn-submit">Submit</button>   <!-- Submit button to send the quiz answers to the server -->
+    </form>   
   </div>
 </body>
 </html>
