@@ -1,28 +1,29 @@
+"""@ref R21_0"""
 <!DOCTYPE html>
 <html>
 <head>
   <title>Dashboard</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">    <!-- Link to the external CSS file for styling -->
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to the Dashboard</h1>
-    <div class="dashboard-section">
-      <div class="box">
-        <h2 class="box-title">Name Box</h2>
-        <p class="box-content">Your name: {{ username }}</p>
+    <h1>Welcome to the Dashboard</h1>   <!-- Main heading of the dashboard page -->
+    <div class="dashboard-section">    <!-- Section that holds the dashboard content -->
+      <div class="box">   <!-- Box 1 with user information -->
+        <h2 class="box-title">Name Box</h2>    <!-- Title of Box 1 -->
+        <p class="box-content">Your name: {{ username }}</p>   <!-- Displaying the user's name -->
       </div>
-      <div class="box">
-        <h2 class="box-title">Instructions</h2>
-        <div class="box-content">
+      <div class="box">   <!-- Box 2 with instructions for the quiz -->
+        <h2 class="box-title">Instructions</h2>    <!-- Title of Box 2 -->
+        <div class="box-content">   <!-- Content of Box 2 -->
           <p>Instruction:</p>
-          <p>1. There is a timer for each question.</p>
-          <p>2. Total 10 questions will be shown.</p>
-          <p>All the best!</p>
+          <p>1. There is a timer for each question.</p>    <!-- Instruction 1 -->
+          <p>2. Total 10 questions will be shown.</p>     <!-- Instruction 2 -->
+          <p>All the best!</p>    <!-- Wishing the user good luck -->
         </div>
       </div>
-      <form method="GET" action="{{ url_for('quiz') }}">
-        <button type="submit" class="btn-take-quiz">Take the Quiz</button>
+      <form method="GET" action="{{ url_for('quiz') }}">   <!-- Form to initiate the quiz by submitting to the 'quiz' endpoint using GET method -->
+        <button type="submit" class="btn-take-quiz">Take the Quiz</button>   <!-- Button to start the quiz -->
       </form>      
     </div>
   </div>
