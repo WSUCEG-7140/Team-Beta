@@ -14,7 +14,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
   }
-  
+
+ .box-title {
+    color: #41b883;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
   .box-content {
     font-size: 16px;
     line-height: 1.5;
