@@ -2,69 +2,69 @@
 
 """@ref R70_0"""
 
-/* Styling for the entire page /
+/* Styling for the entire page */
 body {
-background-color: #f2f2f2; / Set the background color of the page /
-margin: 0; / Remove default margins /
-padding: 0; / Remove default paddings /
-font-family: Arial, sans-serif; / Set the font family for the entire page */
+background-color: #f2f2f2; /* Set the background color of the page */
+margin: 0; /* Remove default margins */
+padding: 0; /* Remove default paddings */
+font-family: Arial, sans-serif; /* Set the font family for the entire page */
 }
 
-/* Styling for the container that holds the quiz content /
+/* Styling for the container that holds the quiz content */
 .container {
-max-width: 600px; / Set the maximum width of the container /
-margin: 0 auto; / Center the container horizontally /
-padding: 40px; / Add padding around the container content /
-background-color: #fff; / Set the background color of the container /
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); / Add a subtle box shadow effect /
-border-radius: 5px; / Round the corners of the container */
+max-width: 600px; /* Set the maximum width of the container */
+margin: 0 auto; /* Center the container horizontally */
+padding: 40px; /* Add padding around the container content */
+background-color: #fff; /* Set the background color of the container */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
+border-radius: 5px; /* Round the corners of the container */
 }
 
-/* Styling for the main heading of the quiz page /
+/* Styling for the main heading of the quiz page */
 h1 {
-text-align: center; / Center-align the heading /
-color: #41b883; / Set the heading color /
-font-size: 24px; / Set the font size of the heading /
-margin-bottom: 20px; / Add bottom margin below the heading */
+text-align: center; /* Center-align the heading */
+color: #41b883; /* Set the heading color */
+font-size: 24px; /* Set the font size of the heading */
+margin-bottom: 20px; /* Add bottom margin below the heading */
 }
 
-/* Styling for the quiz form /
+/* Styling for the quiz form */
 form {
-margin-top: 20px; / Add top margin to the form */
+margin-top: 20px; /* Add top margin to the form */
 }
 
-/* Styling for each question in the quiz /
+/* Styling for each question in the quiz */
 .question {
-margin-bottom: 20px; / Add bottom margin below each question */
+margin-bottom: 20px; /* Add bottom margin below each question */
 }
 
-/* Styling for the label of each option in the quiz /
+/* Styling for the label of each option in the quiz */
 .option-label {
-display: block; / Display the label as a block to stack them vertically /
-margin-bottom: 10px; / Add bottom margin below each label */
+display: block; /* Display the label as a block to stack them vertically */
+margin-bottom: 10px; /* Add bottom margin below each label */
 }
 
-/* Styling for the radio buttons representing the options /
+/* Styling for the radio buttons representing the options */
 input[type="radio"] {
-margin-right: 5px; / Add right margin to the radio buttons */
+margin-right: 5px; /* Add right margin to the radio buttons */
 }
 
-/* Styling for the submit button of the quiz /
+/* Styling for the submit button of the quiz */
 .btn-submit {
-display: block; / Display the button as a block to occupy full width /
-margin-top: 20px; / Add top margin above the button /
-background-color: #41b883; / Set the button background color /
-color: #fff; / Set the button text color /
-border: none; / Remove the button border /
-border-radius: 5px; / Round the corners of the button /
-padding: 10px 20px; / Add padding inside the button /
-cursor: pointer; / Show a pointer cursor on hover /
-font-size: 16px; / Set the font size for the button */
+display: block; /* Display the button as a block to occupy full width */
+margin-top: 20px; /* Add top margin above the button */
+background-color: #41b883; /* Set the button background color */
+color: #fff; /* Set the button text color */
+border: none; /* Remove the button border */
+border-radius: 5px; /* Round the corners of the button */
+padding: 10px 20px; /* Add padding inside the button */
+cursor: pointer; /* Show a pointer cursor on hover */
+font-size: 16px; /* Set the font size for the button */
 }
 
-/* Styling for the hover effect of the submit button /
+/* Styling for the hover effect of the submit button */
 .btn-submit:hover {
-background-color: #41b883; / Change the background color on hover (same as default to maintain consistency) */
+background-color: #41b883; /* Change the background color on hover (same as default to maintain consistency) */
 }
 
 
