@@ -1,23 +1,40 @@
+"""@ref R17_0"""
 
+```html
+<!-- Declaration of the HTML document type -->
 <!DOCTYPE html>
+<!-- Start of the HTML document -->
 <html>
 <head>
+    <!-- Title of the HTML document -->
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}"> # Link to .css file
+    <!-- Linking the external CSS file 'register.css' to the HTML document -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
 </head>
 <body>
+    <!-- Main container -->
     <div class="container">
+        <!-- Main heading -->
         <h1>Register</h1>
+        <!-- Conditional block: If there's an 'error' variable, display the error message -->
         {% if error %}
         <p class="error-message">{{ error }}</p>
         {% endif %}
+        <!-- Registration form -->
         <form action="{{ url_for('register') }}" method="POST">
+            <!-- Label for the 'Username' field -->
             <label>Username:</label>
+            <!-- Input field for the 'Username' -->
             <input type="text" name="username" required><br>
+            <!-- Label for the 'Password' field -->
             <label>Password:</label>
+            <!-- Input field for the 'Password' -->
             <input type="password" name="password" required><br>
+            <!-- Submit button for the registration form -->
             <input type="submit" value="Register">
         </form>
     </div>
 </body>
 </html>
+<!-- End of the HTML document -->
+```
