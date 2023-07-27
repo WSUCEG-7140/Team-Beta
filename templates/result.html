@@ -1,90 +1,92 @@
+"""@ref R72_0"""
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>IQ Test Results</title>
   <!-- Include the necessary CSS and JavaScript files for chart.js -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">   <!-- Include Chart.js CSS file -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">   <!-- Link to the external CSS file for additional styling -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>   <!-- Include Chart.js JavaScript file -->
 </head>
 <body>
-  <h1>IQ Test Results</h1>
+  <h1>IQ Test Results</h1>   <!-- Main heading for the IQ test results page -->
 
   <div>
-    <h2>IQ Score: {{ score }}</h2>
-    <p>Percentile Rank: {{ percentile_rank }}</p>
-    <p>Interpretation: {{ interpretation }}</p>
+    <h2>IQ Score: {{ score }}</h2>   <!-- Display the user's IQ score -->
+    <p>Percentile Rank: {{ percentile_rank }}</p>   <!-- Display the percentile rank of the user's IQ score -->
+    <p>Interpretation: {{ interpretation }}</p>   <!-- Display an interpretation of the user's IQ score -->
 
-    <h3>Bar Chart</h3>
-    <canvas id="barChart"></canvas>
+    <h3>Bar Chart</h3>   <!-- Sub-heading for the bar chart -->
+    <canvas id="barChart"></canvas>   <!-- Canvas element to render the bar chart -->
     
-    <h3>Pie Chart</h3>
-    <canvas id="pieChart"></canvas>
+    <h3>Pie Chart</h3>   <!-- Sub-heading for the pie chart -->
+    <canvas id="pieChart"></canvas>   <!-- Canvas element to render the pie chart -->
     
-    <h3>Comparison With Global Users</h3>
-    <canvas id="lineChart"></canvas>
+    <h3>Comparison With Global Users</h3>   <!-- Sub-heading for the line chart -->
+    <canvas id="lineChart"></canvas>   <!-- Canvas element to render the line chart -->
   </div>
 
-  <a href="{{ url_for('login') }}" class="logout-btn">Logout</a>
+  <a href="{{ url_for('login') }}" class="logout-btn">Logout</a>   <!-- Logout button to return to the login page -->
 
   <script>
     // Get the chart data from the Flask template
-    var barChartData = {{ bar_chart_data | tojson }};
-    var pieChartData = {{ pie_chart_data | tojson }};
-    var lineChartData = {{ line_chart_data | tojson }};
+    var barChartData = {{ bar_chart_data | tojson }};   <!-- Retrieve the data for the bar chart -->
+    var pieChartData = {{ pie_chart_data | tojson }};   <!-- Retrieve the data for the pie chart -->
+    var lineChartData = {{ line_chart_data | tojson }};   <!-- Retrieve the data for the line chart -->
 
-    // Create the bar chart
+    // Create the bar chart using Chart.js
     var barChartCanvas = document.getElementById('barChart').getContext('2d');
     new Chart(barChartCanvas, {
-      type: 'bar',
+      type: 'bar',   <!-- Type of chart to be created -->
       data: {
-        labels: ['Cognitive', 'Intellectual', 'Reasonal', 'Aptitude'],
+        labels: ['Cognitive', 'Intellectual', 'Reasonal', 'Aptitude'],   <!-- Labels for the bar chart -->
         datasets: [{
-          label: 'Scores',
-          data: barChartData.map(item => item.value),
-          backgroundColor: 'rgba(54, 162, 235, 0.5)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+          label: 'Scores',   <!-- Label for the dataset -->
+          data: barChartData.map(item => item.value),   <!-- Retrieve the data values for the bar chart -->
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',   <!-- Background color for the bars -->
+          borderColor: 'rgba(54, 162, 235, 1)',   <!-- Border color for the bars -->
+          borderWidth: 1   <!-- Width of the border for the bars -->
         }]
       },
       options: {
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true
+              beginAtZero: true   <!-- Start the Y-axis at zero to ensure data is displayed properly -->
             }
           }]
         }
       }
     });
 
-    // Create the pie chart
+    // Create the pie chart using Chart.js
     var pieChartCanvas = document.getElementById('pieChart').getContext('2d');
     new Chart(pieChartCanvas, {
-      type: 'pie',
+      type: 'pie',   <!-- Type of chart to be created -->
       data: {
-        labels: ['Cognitive', 'Intellectual', 'Reasonal'],
+        labels: ['Cognitive', 'Intellectual', 'Reasonal'],   <!-- Labels for the pie chart -->
         datasets: [{
-          data: pieChartData.map(item => item.value),
-          backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-          borderWidth: 1
+          data: pieChartData.map(item => item.value),   <!-- Retrieve the data values for the pie chart -->
+          backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)'],   <!-- Background colors for the pie segments -->
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],   <!-- Border colors for the pie segments -->
+          borderWidth: 1   <!-- Width of the border for the pie segments -->
         }]
       }
     });
 
-    // Create the line chart
+    // Create the line chart using Chart.js
     var lineChartCanvas = document.getElementById('lineChart').getContext('2d');
     new Chart(lineChartCanvas, {
-      type: 'line',
+      type: 'line',   <!-- Type of chart to be created -->
       data: {
-        labels: lineChartData.map(item => item.x),
+        labels: lineChartData.map(item => item.x),   <!-- Labels for the X-axis of the line chart -->
         datasets: [{
-          label: 'Comparison with Global Data',
-          data: lineChartData.map(item => item.y),
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
+          label: 'Comparison with Global Data',   <!-- Label for the dataset -->
+          data: lineChartData.map(item => item.y),   <!-- Retrieve the data values for the line chart -->
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',   <!-- Background color for the line chart -->
+          borderColor: 'rgba(75, 192, 192, 1)',   <!-- Border color for the line chart -->
+          borderWidth: 1   <!-- Width of the border for the line chart -->
         }]
       },
       options: {
@@ -92,16 +94,16 @@
           xAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                if (index % (Math.ceil(values.length / 4)) === 0) {
-                  return value;
+                if (index % (Math.ceil(values.length / 4)) === 0) {   <!-- Condition to show X-axis labels at regular intervals -->
+                  return value;   <!-- Return the label value if it meets the condition -->
                 }
-                return '';
+                return '';   <!-- Return an empty string if the condition is not met -->
               }
             }
           }],
           yAxes: [{
             ticks: {
-              beginAtZero: true
+              beginAtZero: true   <!-- Start the Y-axis at zero to ensure data is displayed properly -->
             }
           }]
         }

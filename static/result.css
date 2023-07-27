@@ -1,58 +1,69 @@
+"""@ref R71_0"""
+
+/* Set background color, margins, padding, and font family for the entire body */
 body {
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #41b883;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    color: #41b883;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-  
-  canvas {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  .logout-btn {
-    display: inline-block;
-    background-color: #41b883;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .logout-btn:hover {
-    background-color: #35495e;
-  }
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Define styles for the container element */
+.container {
+  max-width: 600px; /* Set the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 40px; /* Add padding around the container content */
+  background-color: #fff; /* Set background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
+  border-radius: 5px; /* Round the corners of the container */
+}
+
+/* Style for the main heading */
+h1 {
+  text-align: center; /* Center-align the heading */
+  color: #41b883; /* Set the heading color */
+  font-size: 24px; /* Set the font size of the heading */
+  margin-bottom: 20px; /* Add bottom margin below the heading */
+}
+
+/* Style for secondary headings */
+h2 {
+  color: #41b883; /* Set the color for secondary headings */
+  font-size: 20px; /* Set the font size for secondary headings */
+  margin-bottom: 10px; /* Add bottom margin below secondary headings */
+}
+
+/* Style for paragraphs */
+p {
+  font-size: 16px; /* Set the font size for paragraphs */
+  line-height: 1.5; /* Set the line height for better readability */
+  margin-bottom: 15px; /* Add bottom margin below paragraphs */
+}
+
+/* Style for canvas elements (used for graphics/drawings) */
+canvas {
+  display: block; /* Make canvas elements block-level to occupy full width */
+  margin-top: 10px; /* Add top margin above canvas elements */
+  margin-bottom: 20px; /* Add bottom margin below canvas elements */
+}
+
+/* Style for the logout button */
+.logout-btn {
+  display: inline-block; /* Display the button as an inline block */
+  background-color: #41b883; /* Set the button background color */
+  color: #fff; /* Set the button text color */
+  border: none; /* Remove the button border */
+  padding: 10px 20px; /* Add padding inside the button */
+  text-decoration: none; /* Remove underlines from the button text */
+  position: absolute; /* Position the button absolutely within its container */
+  top: 10px; /* Position the button 10px from the top */
+  right: 10px; /* Position the button 10px from the right */
+  border-radius: 5px; /* Round the corners of the button */
+  font-size: 16px; /* Set the font size for the button */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+/* Style for the hover effect of the logout button */
+.logout-btn:hover {
+  background-color: #35495e; /* Change the background color on hover */
+}
