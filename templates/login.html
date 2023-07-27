@@ -2,22 +2,22 @@
 <html>
 <head>
   <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">    #Link to our .css file
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">    # Link to our .css file (Importing external CSS file to style the login page)
 </head>
 <body>
-  <div class="container">
-    <h1>Login</h1>
-    {% if error %}
-    <p class="error-message">{{ error }}</p>
+  <div class="container">    # A container div to group the login elements together
+    <h1>Login</h1>    # Heading displaying "Login"
+    {% if error %}    # If an error is present (conditional template rendering based on a variable named "error")
+    <p class="error-message">{{ error }}</p>    # Display the error message within a paragraph with class "error-message"
     {% endif %}
-    <form action="{{ url_for('login') }}" method="POST">
-      <label>Username:</label>
-      <input type="text" name="username" required><br>
-      <label>Password:</label>
-      <input type="password" name="password" required><br>
-      <input type="submit" value="Login">
+    <form action="{{ url_for('login') }}" method="POST">    # Form element with action set to the 'login' route and method as POST
+      <label>Username:</label>    # Label for the username input field
+      <input type="text" name="username" required><br>    # Text input field for the username, with 'required' attribute to make it mandatory
+      <label>Password:</label>    # Label for the password input field
+      <input type="password" name="password" required><br>    # Password input field, with 'required' attribute to make it mandatory
+      <input type="submit" value="Login">    # Submit button to trigger the login action
     </form>
-    <p class="text-center">Don't have an account? <a href="{{ url_for('register') }}" class="register-link">Register</a></p>
+    <p class="text-center">Don't have an account? <a href="{{ url_for('register') }}" class="register-link">Register</a></p>    # A paragraph containing a link to the 'register' route for creating a new account
   </div>
 </body>
 </html>
