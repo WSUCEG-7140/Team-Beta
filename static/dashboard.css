@@ -1,59 +1,66 @@
-/* dashboard.css */
-
+/* Styles for a section in the dashboard */
+"""@ref R100_0"""
 .dashboard-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-  }
-  
-  .box {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
+  margin-top: 30px; /* Add top margin to the section */
+  padding: 20px; /* Add padding inside the section */
+  background-color: #f9f9f9; /* Set background color for the section */
+  border-radius: 5px; /* Round the corners of the section */
+}
 
- .box-title {
-    color: #41b883;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+/* Styles for a box within the dashboard section */
+.box {
+  background-color: #fff; /* Set background color for the box */
+  padding: 20px; /* Add padding inside the box */
+  margin-bottom: 20px; /* Add bottom margin to the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
+  border-radius: 5px; /* Round the corners of the box */
+}
 
-  .box-content {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-  
-  .profile-photo {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-photo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+/* Styles for the title of a box */
+.box-title {
+  color: #41b883; /* Set the title text color */
+  font-size: 20px; /* Set the font size of the title */
+  margin-bottom: 10px; /* Add bottom margin to the title */
+}
 
- .btn-take-quiz {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #41b883;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 20px;
-  }
+/* Styles for the content inside a box */
+.box-content {
+  font-size: 16px; /* Set the font size for the content */
+  line-height: 1.5; /* Set the line height for the content */
+  margin-bottom: 15px; /* Add bottom margin to the content */
+}
 
-  .btn-take-quiz:hover {
-    background-color: #32a672;
-  }
+/* Styles for the profile photo section */
+.profile-photo {
+  text-align: center; /* Center-align the profile photo */
+  margin-bottom: 20px; /* Add bottom margin to the profile photo section */
+}
+
+/* Styles for the profile photo */
+.profile-photo img {
+  width: 200px; /* Set the width of the profile photo */
+  height: 200px; /* Set the height of the profile photo */
+  border-radius: 50%; /* Make the profile photo circular */
+  object-fit: cover; /* Scale the photo to cover the entire element */
+}
+
+/* Styles for the "Take Quiz" button */
+.btn-take-quiz {
+  display: block; /* Display the button as a block to occupy full width */
+  width: 100%; /* Set the button width to 100% */
+  padding: 10px; /* Add padding inside the button */
+  font-size: 16px; /* Set the font size for the button */
+  background-color: #41b883; /* Set the button background color */
+  color: #fff; /* Set the button text color */
+  border: none; /* Remove the button border */
+  border-radius: 3px; /* Round the corners of the button */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center-align the button text */
+  text-decoration: none; /* Remove underlines from the button text */
+  margin-top: 20px; /* Add top margin to the button */
+}
+
+/* Styles for the hover effect of the "Take Quiz" button */
+.btn-take-quiz:hover {
+  background-color: #32a672; /* Change the background color on hover */
+}
