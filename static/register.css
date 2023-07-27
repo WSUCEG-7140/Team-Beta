@@ -1,69 +1,79 @@
 /* register.css */
 
+"""@ref R36_0"""
+
+/* Styling for the body element */
 body {
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #41b883;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #35495e;
-    font-size: 16px;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #41b883;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #32a672;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
+    background-color: #f2f2f2; /* Set the background color of the body to a light gray (#f2f2f2) */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Set the font family for the text to Arial or any sans-serif font */
+}
+
+/* Styling for the container element */
+.container {
+    max-width: 400px; /* Limit the maximum width of the container to 400 pixels */
+    margin: 0 auto; /* Center the container horizontally by setting left and right margins to auto */
+    padding: 40px; /* Add padding inside the container */
+    background-color: #fff; /* Set the background color of the container to white (#fff) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle effect with a slight transparency */
+    border-radius: 5px; /* Add rounded corners to the container with a radius of 5 pixels */
+}
+
+/* Styling for the main heading */
+h1 {
+    text-align: center; /* Center the heading text */
+    color: #41b883; /* Set the color of the heading text to a shade of green (#41b883) */
+    font-size: 24px; /* Set the font size of the heading to 24 pixels */
+    margin-bottom: 20px; /* Add margin at the bottom of the heading */
+}
+
+/* Styling for the form */
+form {
+    margin-top: 20px; /* Add margin at the top of the form */
+}
+
+/* Styling for labels */
+label {
+    display: block; /* Make labels behave like block elements, one below the other */
+    font-weight: bold; /* Set font weight to bold */
+    margin-bottom: 5px; /* Add margin at the bottom of labels */
+    color: #35495e; /* Set the color of labels to a shade of blue-gray (#35495e) */
+    font-size: 16px; /* Set the font size of labels to 16 pixels */
+}
+
+/* Styling for input fields of type text, password, and number */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%; /* Set the width of input fields to 100% */
+    padding: 10px; /* Add padding inside the input fields */
+    font-size: 16px; /* Set the font size of input fields to 16 pixels */
+    border-radius: 3px; /* Add rounded corners to input fields with a radius of 3 pixels */
+    border: 1px solid #ccc; /* Set the border style for input fields with a color of light gray (#ccc) */
+    margin-bottom: 10px; /* Add margin at the bottom of input fields */
+}
+
+/* Styling for the submit button */
+input[type="submit"] {
+    display: block; /* Make the submit button a block element, spanning the entire width */
+    width: 100%; /* Set the width of the submit button to 100% */
+    padding: 10px; /* Add padding inside the submit button */
+    font-size: 16px; /* Set the font size of the submit button to 16 pixels */
+    background-color: #41b883; /* Set the background color of the submit button to a shade of green (#41b883) */
+    color: #fff; /* Set the text color of the submit button to white */
+    border: none; /* Remove the border from the submit button */
+    border-radius: 3px; /* Add rounded corners to the submit button with a radius of 3 pixels */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+/* Styling for the submit button on hover */
+input[type="submit"]:hover {
+    background-color: #32a672; /* Change the background color of the submit button to a slightly darker shade of green (#32a672) on hover */
+}
+
+/* Styling for error messages */
+.error-message {
+    color: red; /* Set the color of error messages to red */
+    text-align: center; /* Center the error messages */
+}
