@@ -1,70 +1,100 @@
+<!-- Declaration of the HTML document type and language -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
     <title>Test Analysis and Review</title>
+    <!-- Styling for the body element -->
     <style>
+        /* Set the font family, margin, and background color for the entire page */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f2f2f2;
         }
+
+        /* Styling for the main heading */
         h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
+            color: #333; /* Set the heading color */
+            text-align: center; /* Center-align the heading text */
+            margin-bottom: 20px; /* Add margin at the bottom of the heading */
         }
+
+        /* Styling for secondary headings */
         h2 {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Add margin at the bottom of secondary headings */
         }
+
+        /* Styling for strengths and weaknesses sections */
         .strengths, .weaknesses {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px; /* Add padding inside the sections */
+            border: 1px solid #ddd; /* Set the border with a color of light gray (#ddd) */
+            border-radius: 5px; /* Round the corners of the sections with a radius of 5 pixels */
+            margin-bottom: 20px; /* Add margin at the bottom of the sections */
+            background-color: #fff; /* Set the background color for the sections to white (#fff) */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
         }
+
+        /* Styling for the strengths section */
         .strengths {
-            border-color: #4CAF50;
+            border-color: #4CAF50; /* Set the border color to a shade of green (#4CAF50) */
         }
+
+        /* Styling for the weaknesses section */
         .weaknesses {
-            border-color: #F44336;
+            border-color: #F44336; /* Set the border color to a shade of red (#F44336) */
         }
+
+        /* Styling for list items inside strengths and weaknesses sections */
         .strengths li, .weaknesses li {
-            list-style: disc;
-            margin-left: 20px;
+            list-style: disc; /* Use a bullet point for list items */
+            margin-left: 20px; /* Add left margin to list items */
         }
+
+        /* Styling for the "No data" message */
         .no-data {
-            color: #888;
+            color: #888; /* Set the color of the message to a shade of gray (#888) */
         }
     </style>
 </head>
 <body>
+    <!-- Main heading of the webpage -->
     <h1>Test Analysis and Review</h1>
 
+    <!-- Section for strengths -->
     <div class="strengths">
+        <!-- Secondary heading for strengths -->
         <h2>Strengths</h2>
+        <!-- Unordered list for displaying strengths data -->
         <ul id="strengths-list">
             <!-- Placeholder for strengths data -->
         </ul>
+        <!-- "No data" message for strengths section -->
         <p class="no-data" id="strengths-no-data">No strengths identified.</p>
     </div>
 
+    <!-- Section for weaknesses -->
     <div class="weaknesses">
+        <!-- Secondary heading for weaknesses -->
         <h2>Weaknesses</h2>
+        <!-- Unordered list for displaying weaknesses data -->
         <ul id="weaknesses-list">
             <!-- Placeholder for weaknesses data -->
         </ul>
+        <!-- "No data" message for weaknesses section -->
         <p class="no-data" id="weaknesses-no-data">No weaknesses identified.</p>
     </div>
 
+    <!-- JavaScript code to fetch data from the API and update the DOM -->
     <script>
         // Function to fetch data from the API
         function fetchData() {
-            const userId = "YOUR_USER_ID"; // Replace with actual user ID
-            const quizId = "YOUR_QUIZ_ID"; // Replace with actual quiz ID
+            // Replace with actual user ID and quiz ID
+            const userId = "YOUR_USER_ID";
+            const quizId = "YOUR_QUIZ_ID";
             const apiEndpoint = `/analyze-review?user_id=${userId}&quiz_id=${quizId}`;
 
             fetch(apiEndpoint)
@@ -76,28 +106,32 @@
                     const strengthsNoData = document.getElementById("strengths-no-data");
                     const weaknessesNoData = document.getElementById("weaknesses-no-data");
 
+                    // Check for strengths data
                     if (data.strengths.length > 0) {
-                        strengthsNoData.style.display = "none";
-                        strengthsList.innerHTML = "";
+                        strengthsNoData.style.display = "none"; // Hide "No data" message
+                        strengthsList.innerHTML = ""; // Clear previous data
                         data.strengths.forEach(strength => {
+                            // Create list items for strengths and append them to the list
                             const listItem = document.createElement("li");
                             listItem.innerText = strength;
                             strengthsList.appendChild(listItem);
                         });
                     } else {
-                        strengthsList.style.display = "none";
+                        strengthsList.style.display = "none"; // Hide strengths list if no data
                     }
 
+                    // Check for weaknesses data
                     if (data.weaknesses.length > 0) {
-                        weaknessesNoData.style.display = "none";
-                        weaknessesList.innerHTML = "";
+                        weaknessesNoData.style.display = "none"; // Hide "No data" message
+                        weaknessesList.innerHTML = ""; // Clear previous data
                         data.weaknesses.forEach(weakness => {
+                            // Create list items for weaknesses and append them to the list
                             const listItem = document.createElement("li");
                             listItem.innerText = weakness;
                             weaknessesList.appendChild(listItem);
                         });
                     } else {
-                        weaknessesList.style.display = "none";
+                        weaknessesList.style.display = "none"; // Hide weaknesses list if no data
                     }
                 })
                 .catch(error => {
