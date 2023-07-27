@@ -1,88 +1,105 @@
+
+
+<!-- Declaration of the HTML document type -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Contact Us</title>
+  <!-- Styling for the body element -->
   <style>
+    /* Set font family and margin for the entire page */
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
 
+    /* Styling for the main heading */
     h1 {
-      text-align: center;
+      text-align: center; /* Center-align the heading text */
     }
 
+    /* Styling for the contact form */
     form {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px; /* Limit the width of the form to 400 pixels */
+      margin: 20px auto; /* Center the form horizontally with auto margins */
+      padding: 20px; /* Add padding inside the form */
+      border: 1px solid #ccc; /* Set a border with a color of light gray (#ccc) */
+      border-radius: 5px; /* Round the corners of the form with a radius of 5 pixels */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
     }
 
+    /* Styling for labels */
     label {
-      display: block;
-      margin-bottom: 5px;
+      display: block; /* Make labels behave like block elements, one below the other */
+      margin-bottom: 5px; /* Add margin at the bottom of labels */
     }
 
+    /* Styling for input fields and textarea */
     input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
+      width: 100%; /* Set the width of input fields and textarea to 100% */
+      padding: 8px; /* Add padding inside the input fields and textarea */
+      margin-bottom: 15px; /* Add margin at the bottom of input fields and textarea */
+      border: 1px solid #ccc; /* Set a border with a color of light gray (#ccc) */
+      border-radius: 3px; /* Round the corners of input fields and textarea with a radius of 3 pixels */
     }
 
+    /* Styling for the submit button */
     button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      background-color: #4CAF50; /* Set the background color of the button to a shade of green (#4CAF50) */
+      color: white; /* Set the text color of the button to white */
+      padding: 10px 15px; /* Add padding inside the button */
+      border: none; /* Remove the border from the button */
+      border-radius: 4px; /* Round the corners of the button with a radius of 4 pixels */
+      cursor: pointer; /* Show a pointer cursor on hover */
     }
 
+    /* Styling for the button on hover */
     button:hover {
-      background-color: #45a049;
+      background-color: #45a049; /* Change the background color of the button to a slightly darker shade of green (#45a049) on hover */
     }
 
+    /* Styling for secondary headings */
     h2 {
-      margin-top: 40px;
+      margin-top: 40px; /* Add top margin to secondary headings */
     }
 
+    /* Styling for subheadings */
     h3 {
-      margin-bottom: 5px;
+      margin-bottom: 5px; /* Add bottom margin to subheadings */
     }
 
+    /* Styling for paragraphs */
     p {
-      margin-top: 0;
+      margin-top: 0; /* Add top margin to paragraphs */
     }
+
     /* Modal styles */
     .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
+      display: none; /* Initially hide the modal */
+      position: fixed; /* Position the modal as fixed */
+      top: 0; /* Set the top position of the modal to 0 */
+      left: 0; /* Set the left position of the modal to 0 */
+      width: 100%; /* Set the width of the modal to 100% */
+      height: 100%; /* Set the height of the modal to 100% */
+      background-color: rgba(0, 0, 0, 0.5); /* Set the background color of the modal to a semi-transparent black */
+      z-index: 9999; /* Set the z-index of the modal to a high value to appear above other elements */
     }
 
+    /* Styling for the modal content */
     .modal-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      position: absolute; /* Position the modal content as absolute */
+      top: 50%; /* Set the top position of the modal content to 50% */
+      left: 50%; /* Set the left position of the modal content to 50% */
+      transform: translate(-50%, -50%); /* Center the modal content horizontally and vertically */
+      background-color: #fff; /* Set the background color of the modal content to white (#fff) */
+      padding: 20px; /* Add padding inside the modal content */
+      border-radius: 5px; /* Round the corners of the modal content with a radius of 5 pixels */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow effect */
     }
   </style>
 </head>
 <body>
+  <!-- Main heading of the webpage -->
   <h1>Contact Us</h1>
   <p>Feel free to send us your questions or requests for help!</p>
 
@@ -94,6 +111,7 @@
     </div>
   </div>
 
+  <!-- Contact form -->
   <form id="contactForm" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
@@ -107,21 +125,24 @@
     <button type="submit">Submit</button>
   </form>
 
-  <!-- Your JavaScript code here -->
+  <!-- JavaScript code here -->
   <script>
+    // JavaScript to handle form submission and modal display
     const contactForm = document.getElementById("contactForm");
     const modal = document.getElementById("messageModal");
     const modalMessage = document.getElementById("modalMessage");
     const closeModal = document.getElementById("closeModal");
 
+    // Event listener for form submission
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
+      // Get form field values
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
 
-      // Send the form data to the backend (replace this with your own form submission logic)
+      // Send form data to the backend (replace this with your own form submission logic)
       fetch("/submitContactForm", {
         method: "POST",
         headers: {
@@ -131,7 +152,7 @@
       })
       .then(() => {
         // Show the modal with the thank you message
-        modalMessage.textContent = "Thank you! We will connect to you shortly.";
+        modalMessage.textContent = "Thank you! We will connect with you shortly.";
         modal.style.display = "block";
       })
       .catch((error) => {
@@ -139,6 +160,7 @@
       });
     });
 
+    // Event listener for modal close button
     closeModal.addEventListener("click", () => {
       // Close the modal when the "Close" button is clicked
       modal.style.display = "none";
