@@ -63,14 +63,14 @@
     // Create the pie chart using Chart.js
     var pieChartCanvas = document.getElementById('pieChart').getContext('2d');
     new Chart(pieChartCanvas, {
-      type: 'pie',   <!-- Type of chart to be created -->
+      type: 'pie',   // Type of chart to be created 
       data: {
-        labels: ['Cognitive', 'Intellectual', 'Reasonal'],   <!-- Labels for the pie chart -->
+        labels: ['Cognitive', 'Intellectual', 'Reasonal'],   // Labels for the pie chart
         datasets: [{
-          data: pieChartData.map(item => item.value),   <!-- Retrieve the data values for the pie chart -->
-          backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)'],   <!-- Background colors for the pie segments -->
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],   <!-- Border colors for the pie segments -->
-          borderWidth: 1   <!-- Width of the border for the pie segments -->
+          data: pieChartData.map(item => item.value),   // Retrieve the data values for the pie chart 
+          backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)'],  // Background colors for the pie segments 
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],   // Border colors for the pie segments 
+          borderWidth: 1   // Width of the border for the pie segments 
         }]
       }
     });
@@ -78,15 +78,15 @@
     // Create the line chart using Chart.js
     var lineChartCanvas = document.getElementById('lineChart').getContext('2d');
     new Chart(lineChartCanvas, {
-      type: 'line',   <!-- Type of chart to be created -->
+      type: 'line',   // Type of chart to be created 
       data: {
-        labels: lineChartData.map(item => item.x),   <!-- Labels for the X-axis of the line chart -->
+        labels: lineChartData.map(item => item.x),   // Labels for the X-axis of the line chart 
         datasets: [{
-          label: 'Comparison with Global Data',   <!-- Label for the dataset -->
-          data: lineChartData.map(item => item.y),   <!-- Retrieve the data values for the line chart -->
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',   <!-- Background color for the line chart -->
-          borderColor: 'rgba(75, 192, 192, 1)',   <!-- Border color for the line chart -->
-          borderWidth: 1   <!-- Width of the border for the line chart -->
+          label: 'Comparison with Global Data',   // Label for the dataset 
+          data: lineChartData.map(item => item.y),   // Retrieve the data values for the line chart 
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',   // Background color for the line chart
+          borderColor: 'rgba(75, 192, 192, 1)',   // Border color for the line chart 
+          borderWidth: 1   // Width of the border for the line chart
         }]
       },
       options: {
@@ -94,16 +94,16 @@
           xAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                if (index % (Math.ceil(values.length / 4)) === 0) {   <!-- Condition to show X-axis labels at regular intervals -->
-                  return value;   <!-- Return the label value if it meets the condition -->
+                if (index % (Math.ceil(values.length / 4)) === 0) {   // Condition to show X-axis labels at regular intervals //
+                  return value;   // Return the label value if it meets the condition
                 }
-                return '';   <!-- Return an empty string if the condition is not met -->
+                return '';   // Return an empty string if the condition is not met 
               }
             }
           }],
           yAxes: [{
             ticks: {
-              beginAtZero: true   <!-- Start the Y-axis at zero to ensure data is displayed properly -->
+              beginAtZero: true   // Start the Y-axis at zero to ensure data is displayed properly 
             }
           }]
         }
