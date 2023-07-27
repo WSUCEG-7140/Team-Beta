@@ -1,90 +1,104 @@
+"""@ref R16_0"""
+/* Styling for the body page */
 body {
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #41b883;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  a {
-    display: inline-block;
-    color: #35495e;
-    text-decoration: none;
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  a:hover {
-    color: #41b883;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
+  background-color: #f2f2f2; /* Sets the background color of the entire page to a light gray */
+  margin: 0; /* Removes any default margin around the page */
+  padding: 0; /* Removes any default padding around the page */
+  font-family: Arial, sans-serif; /* Sets the font family for the entire page to Arial or any sans-serif font */
+}
 
-  /* Navbar styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-  }
+/* Styling for the main container */
+.container {
+  max-width: 600px; /* Sets the maximum width of the container to 600 pixels */
+  margin: 0 auto; /* Centers the container horizontally by setting left and right margins to auto */
+  padding: 40px; /* Adds 40 pixels of padding around the container */
+  background-color: #fff; /* Sets the background color of the container to white */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow effect to the container */
+  border-radius: 5px; /* Rounds the corners of the container with a radius of 5 pixels */
+}
 
-  .navbar-left {
-    display: flex;
-    align-items: center;
-  }
+/* Styling for the main heading */
+h1 {
+  text-align: center; /* Centers the text of the heading */
+  color: #41b883; /* Sets the color of the heading text to a shade of green (#41b883) */
+  font-size: 24px; /* Sets the font size of the heading to 24 pixels */
+  margin-bottom: 20px; /* Adds 20 pixels of margin at the bottom of the heading */
+}
 
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
+/* Styling for hyperlinks */
+a {
+  display: inline-block; /* Sets hyperlinks to be displayed as inline blocks */
+  color: #35495e; /* Sets the default color of hyperlinks to a shade of blue-gray (#35495e) */
+  text-decoration: none; /* Removes the underline decoration from hyperlinks */
+  margin-right: 10px; /* Adds 10 pixels of margin to the right of hyperlinks */
+  font-size: 16px; /* Sets the font size of hyperlinks to 16 pixels */
+}
 
-  .navbar a {
-    margin-right: 10px;
-    font-size: 16px;
-    color: #35495e;
-    text-decoration: none;
-  }
+/* Styling for hyperlinks on hover */
+a:hover {
+  color: #41b883; /* Sets the color of hyperlinks to a shade of green (#41b883) when hovered */
+}
 
-  .help-link {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-  }
+/* Styling for error messages */
+.error-message {
+  color: red; /* Sets the color of error messages to red */
+  text-align: center; /* Centers the text of error messages */
+}
 
-  .text-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-  }
+/* Navbar styles */
+.navbar {
+  display: flex; /* Displays the navbar as a flex container */
+  justify-content: space-between; /* Aligns navbar elements with equal space between them */
+  align-items: center; /* Centers the navbar items vertically */
+  padding: 20px; /* Adds 20 pixels of padding around the navbar */
+  background-color: #f2f2f2; /* Sets the background color of the navbar to a light gray (#f2f2f2) */
+}
 
-  h2 {
-    color: #41b883;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+/* Styling for the left section of the navbar */
+.navbar-left {
+  display: flex; /* Displays the left section of the navbar as a flex container */
+  align-items: center; /* Centers the items in the left section vertically */
+}
 
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
+/* Styling for the right section of the navbar */
+.navbar-right {
+  display: flex; /* Displays the right section of the navbar as a flex container */
+  align-items: center; /* Centers the items in the right section vertically */
+}
+
+/* Styling for navbar hyperlinks */
+.navbar a {
+  margin-right: 10px; /* Adds 10 pixels of margin to the right of navbar hyperlinks */
+  font-size: 16px; /* Sets the font size of navbar hyperlinks to 16 pixels */
+  color: #35495e; /* Sets the default color of navbar hyperlinks to a shade of blue-gray (#35495e) */
+  text-decoration: none; /* Removes the underline decoration from navbar hyperlinks */
+}
+
+/* Styling for the help link */
+.help-link {
+  font-size: 16px; /* Sets the font size of the help link to 16 pixels */
+  display: flex; /* Displays the help link as a flex container */
+  align-items: center; /* Centers the items in the help link vertically */
+}
+
+/* Styling for text sections */
+.text-section {
+  margin-top: 30px; /* Adds 30 pixels of margin at the top of text sections */
+  padding: 20px; /* Adds 20 pixels of padding around text sections */
+  background-color: #f9f9f9; /* Sets the background color of text sections to a slightly darker gray (#f9f9f9) */
+  border-radius: 5px; /* Rounds the corners of text sections with a radius of 5 pixels */
+}
+
+/* Styling for subheadings */
+h2 {
+  color: #41b883; /* Sets the color of subheadings to a shade of green (#41b883) */
+  font-size: 20px; /* Sets the font size of subheadings to 20 pixels */
+  margin-bottom: 10px; /* Adds 10 pixels of margin at the bottom of subheadings */
+}
+
+/* Styling for paragraphs */
+p {
+  font-size: 16px; /* Sets the font size of paragraphs to 16 pixels */
+  line-height: 1.5; /* Sets the line height of paragraphs to 1.5 times the font size */
+  margin-bottom: 15px; /* Adds 15 pixels of margin at the bottom of paragraphs */
+}

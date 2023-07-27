@@ -1,7 +1,10 @@
+<!-- The DOCTYPE declaration specifies the document type and version of the HTML -->
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Title of the web page -->
   <title>IQ Test</title>
+  <!-- Linking an external CSS file for styling -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">  
 </head>
 <body>
@@ -12,11 +15,16 @@
 
     <!-- Navigation links -->
     <div class="navbar">
+      <!-- Left part of the navigation bar -->
       <div class="navbar-left">
+        <!-- Link to the 'Register' page -->
         <a href="{{ url_for('register') }}">Register</a>
+        <!-- Link to the 'Login' page -->
         <a href="{{ url_for('login') }}">Login</a>
       </div>
+      <!-- Right part of the navigation bar -->
       <div class="navbar-right">
+        <!-- Link with a class for styling, leading to the 'Contact Us' page -->
         <a class="help-link" href="{{ url_for('contact_us') }}">
           Need Help
         </a>
@@ -28,7 +36,7 @@
       <!-- Subheading -->
       <h2>About IQ Test</h2>
       
-      <!-- Paragraphs -->
+      <!-- Paragraphs with information about the IQ Test -->
       <p>
         Welcome to the IQ Test, a platform designed to measure and assess your intelligence.
         This test evaluates your cognitive abilities, problem-solving skills, and logical reasoning.
@@ -44,7 +52,7 @@
         Unlock your intellectual potential and embark on a journey of continuous improvement.
       </p>
     </div>
-    </div>
+    <!-- Closing the main container -->
   </div>
 </body>
 </html>
