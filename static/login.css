@@ -1,81 +1,92 @@
-/* styles.css */
-
+/* Set background color, margins, padding, and font family for the entire body */
 body {
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;    /* Set the background color of the body */
+  margin: 0;    /* Remove margin around the body */
+  padding: 0;   /* Remove padding around the body */
+  font-family: Arial, sans-serif;    /* Set the font family for the entire document */
 }
 
+
+/* Define styles for the container element that holds the login form */
 .container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  max-width: 400px;    /* Set the maximum width of the container to 400 pixels */
+  margin: 0 auto;      /* Center the container horizontally */
+  padding: 40px;       /* Adds 40 pixels of padding around the container content */
+  background-color: #fff; /* Set background color for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow effect */
+  border-radius: 5px; /* Round the corners of the container with a radius of 5 pixel*/
 }
 
+/* Styles for the main heading */
 h1 {
-  text-align: center;
-  color: #41b883;
-  font-size: 24px;
-  margin-bottom: 20px;
+  text-align: center; /* Center-align the heading */
+  color: #41b883;     /* Set the heading color */
+  font-size: 24px;    /* Set the font size of the heading to 24 pixel*/
+  margin-bottom: 20px; /* Adds 20 pixels of margin at bottom of the heading */
 }
 
+/* Styles for the login form */
 form {
-  margin-top: 20px;
+  margin-top: 20px; /* Add 20 pixels of margin to top of the form */
 }
 
+/* Styles for labels within the form */
 label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #35495e;
-  font-size: 16px;
+  display: block; /* Display labels as blocks to stack them vertically */
+  font-weight: bold; /* Make the label text bold */
+  margin-bottom: 5px; /* Adds 5 pixels to the bottom margin of the labels */
+  color: #35495e; /* Set the label text color */
+  font-size: 16px; /* Set the font size for labels to 16 pixels */
 }
 
+/* Styles for text and password input fields */
 input[type="text"],
 input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  width: 100%; /* Set the input fields to occupy the full width */
+  padding: 10px; /* Adds 10 pixels to padding inside the input fields */
+  font-size: 16px; /* Set the font size to 16 pixels for input fields */
+  border-radius: 3px; /* Round the corners of the input fields with radius of 3 pixel */
+  border: 1px solid #ccc; /* Adds a border around the input fields */
+  margin-bottom: 10px; /* Adds 10 pixel to bottom margin for input fields */
 }
 
+/* Styles for the login button */
 input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #41b883;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  display: block; /* Display the button as a block to occupy full width */
+  width: 100%; /* Set the button width to 100% */
+  padding: 10px; /* Adds 10 pixels to padding inside the button */
+  font-size: 16px; /* Set the font size of 16 pixels for the button */
+  background-color: #41b883; /* Set the button background color */
+  color: #fff; /* Set the button text color */
+  border: none; /* Remove the button border */
+  border-radius: 3px; /* Round the corners of the button with radius 3 pixels */
+  cursor: pointer; /* Show a pointer cursor on hover */
 }
 
+/* Styles for the hover effect of the login button */
 input[type="submit"]:hover {
-  background-color: #32a672;
+  background-color: #32a672; /* Change the background color on hover */
 }
 
+/* Styles for error messages */
 p.error-message {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
+  color: red; /* Set the error message text color to red */
+  text-align: center; /* Center-align the error message text */
+  margin-top: 10px; /* Adds 10 pixels to top margin for the error message */
 }
 
+/* Center-align text in a paragraph */
 .text-center {
-  text-align: center;
+  text-align: center;   /* Center the text inside elements with this class */
 }
 
+/* Styles for the register link */
 .register-link {
-  color: #41b883;
-  text-decoration: none;
+  color: #41b883; /* Set the link color */
+  text-decoration: none; /* Remove underlines from the link */
 }
 
+/* Styles for the hover effect of the register link */
 .register-link:hover {
-  color: #32a672;
+  color: #32a672; /* Change the link color on hover */
 }
