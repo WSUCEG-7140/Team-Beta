@@ -38,7 +38,22 @@
     border-radius: 50%;
     object-fit: cover;
   }
-  
+
+ .btn-take-quiz {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #41b883;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
   .btn-take-quiz:hover {
     background-color: #32a672;
   }
