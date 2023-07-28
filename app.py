@@ -225,26 +225,26 @@ def result():
                         interpretation=interpretation, bar_chart_data=bar_chart_data,
                         pie_chart_data=pie_chart_data, line_chart_data=line_chart_data)
 
-"""
-@app.route('/contact_us', methods=['GET', 'POST'])
-def contact_us():
-    message = None  # Initialize the message variable
 
-    if request.method == 'POST':
+#@app.route('/contact_us', methods=['GET', 'POST'])
+#def contact_us():
+    #message = None  # Initialize the message variable
+
+    #if request.method == 'POST':
         # Process the form submission (you can handle form data here)
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
+        #name = request.form['name']
+        #email = request.form['email']
+       # message = request.form['message']
 
         # Here you can handle the form data as needed (e.g., send an email, save to database, etc.)
         # For this example, we will simply print the form data
-        print(f"Name: {name}, Email: {email}, Message: {message}")
+        #print(f"Name: {name}, Email: {email}, Message: {message}")
 
         # Set the message to be displayed on the page
-        message = "Thank you! We will connect to you shortly."
+       # message = "Thank you! We will connect to you shortly."
 
-    return render_template('contact_us.html', message=message)
-"""
+   # return render_template('contact_us.html', message=message)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
