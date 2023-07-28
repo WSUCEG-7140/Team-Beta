@@ -4,7 +4,7 @@
 ## Opening:
 The Meeting was called to order at 10pm on July 13, 2023, via webex
 
-## Attendees/Present:
+## Attendees/Present: 07
 Ankith Reddy Godala, 
 Poojitha Kamana    ,
 Seshaphani Grandhe ,
@@ -32,7 +32,7 @@ Lavanaya Nelakurthi  :
 I am still working on Issue #70 (Create a style sheet for Quiz Page), once I am done with this issue, I will pick Issue #73 (Create a html code for Quiz Page).
 
 Mohana Kavya Chunduri: 
-I have completed working on doxy file and updated standup meeting-1 and merged the code to main branch. System is working as expected. I will pick Issue #29 (Testing the data) 
+I have completed working on Issue #49 (Create a deoxy file) and updated standup meeting-1 and merged them to main branch. System is working as expected. I will pick Issue #29 (Testing the data) 
 
 Bharat Goru          :
 I am still working on Issue #28(Training the data model) and also working on on Issue #104(Create a backend code using python).
@@ -51,11 +51,11 @@ Poojitha Kamana is assigned to work Issue #39 (Create a style sheet for the Logi
 
 Lavanaya Nelakurthi is still working on Issue #73, which involves creating a html code for Quiz Page.
 
-Mohana Kavya Chunduri is assigned toIssue #29 (Testing the data) 
+Mohana Kavya Chunduri is assigned to Issue #29 (Testing the data).
 
 Krishna Priya Thammana is still working on Issue #104, which involves a backend code using python.
 
-Bharat Goru is assigned to work on Issue #28, which involves traing the data model and Issue #104(Create a backend code using python).
+Bharat Goru is assigned to work on Issue #28, which involves training the data model and Issue #104(Create a backend code using python).
 
 
 ## Next Meeting Details:
