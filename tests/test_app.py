@@ -1,5 +1,5 @@
 from app import app
-
+#from contracts import contract,pre,post
 # Test for the main index page
 def test_index():
     """
