@@ -11,10 +11,10 @@ def test_index():
 
 # Test for the 'register' page
 def test_register_page():
-     """
+    """
         Test case for the 'test_register_page' method of the 'register page' class.
         """
-    response = app.test_client().get('/register')
+    response = app.test_client().get('/register')       
     assert response.status_code == 200   # Assert that the response status code is 200 (OK)
 
 # Test for the 'register' route with POST data
