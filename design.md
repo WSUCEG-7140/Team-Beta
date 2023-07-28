@@ -27,7 +27,8 @@ The Model consists of the following components:
 @anchor R20_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/login.html<br>
 @anchor R73_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/quiz.html<br>
 @anchor R23_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/questions_fetch.py<br>
-@anchor R79_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz_analysis.py
+@anchor R79_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz_analysis.py<br>
+@anchor R104_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/app.py
 
 
 ## View
