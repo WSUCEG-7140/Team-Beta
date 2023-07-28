@@ -225,7 +225,7 @@ def result():
                         interpretation=interpretation, bar_chart_data=bar_chart_data,
                         pie_chart_data=pie_chart_data, line_chart_data=line_chart_data)
 
-    
+"""
 @app.route('/contact_us', methods=['GET', 'POST'])
 def contact_us():
     message = None  # Initialize the message variable
@@ -244,7 +244,7 @@ def contact_us():
         message = "Thank you! We will connect to you shortly."
 
     return render_template('contact_us.html', message=message)
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
