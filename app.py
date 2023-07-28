@@ -1,3 +1,5 @@
+"""@ref R104_0"""
+
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from flask_sqlalchemy import SQLAlchemy
