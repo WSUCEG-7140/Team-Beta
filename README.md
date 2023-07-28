@@ -1,3 +1,33 @@
+# Team Memebers:
+
+1. Ankithreddy Godala      (GitHub UserName: ankithreddygodala)
+   
+2. Bharat Goru             (GitHub UserName: bharatGoru)
+   
+3. Seshaphani Grandhe      (GitHub UserName: seshaphanigrandhe)
+   
+4. Lavanya Nelakurthi      (GitHub UserName: lavanyanelakurthi)
+   
+5. Krishna Priya Thammana  (GitHub UserName: Thammak)
+    
+6. Mohana Kavya Chunduri   (GitHub UserName: mohanakavyac)
+    
+7. Poojitha Kamana         (Github UserName: poojithakamana)
+
+We have covered Literate Programming and Program by Contract in below files:
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/Requriments.md (Linked Issues)
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/design.md   (Design File)
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/questions_fetch.py
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz.csv
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz_analysis.py
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/app.py
+
 # Team-Beta
 
 # IQ Test Web App
@@ -35,7 +65,7 @@ To experience the IQ Test Web App, simply clone this repo into your local enviro
    - Flask
    - HTML/CSS
    - CSV module
-   - Vectorize module
+   - Database
    - Pickle module
 
 ## Going Live:
