@@ -31,8 +31,6 @@ def test_quiz_page():
     response = app.test_client().get('/quiz')
     assert b"<h1>Quiz</h1>" in response.data
 
-# ... (other test cases remain the same)
-
 # Test for the 'contact_us' route with form submission
 def test_contact_us_form_submission():
     """
