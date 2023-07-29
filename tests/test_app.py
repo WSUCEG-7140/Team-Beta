@@ -1,3 +1,5 @@
+from flask import json
+
 from app import app
 #from contracts import contract,pre,post
 # Test for the main index page
@@ -56,3 +58,23 @@ def test_quiz_page():
         """
     response = app.test_client().get('/quiz')
     assert b"<h1>Quiz</h1>" in response.data   # Assert that the response contains the specified header
+
+# Test for the 'contact_us' route with form submission
+def test_contact_us_form_submission():
+    """
+    Test case for the 'contact_us' method with form submission.
+    """
+    data = {
+        'name': 'John Doe',
+        'email': 'john@example.com',
+        'message': 'Test message'
+    }
+    response = app.test_client().post('/contact_us', data=data, follow_redirects=True)
+    assert response.status_code == 200
+    assert b"message" in response.data
+
+    # Decode the JSON response
+    response_json = json.loads(response.data)
+
+    # Check the 'message' field in the response
+    assert response_json["message"] == "Thank you! We will connect to you shortly."
