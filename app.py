@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 from flask_sqlalchemy import SQLAlchemy
 import csv
@@ -240,10 +240,11 @@ def contact_us():
         # For this example, we will simply print the form data
         print(f"Name: {name}, Email: {email}, Message: {message}")
 
-        # Set the message to be displayed on the page
-        message = "Thank you! We will connect to you shortly."
+        # Return a JSON response with the message
+        return jsonify({"message": "Thank you! We will connect to you shortly."})
 
-    return render_template('contact_us.html', message=message)
+    return render_template('contact_us.html')
+
 
 
 if __name__ == '__main__':
