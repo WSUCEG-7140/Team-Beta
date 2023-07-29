@@ -23,20 +23,29 @@ This design applies the [Model View Controller](https://en.wikipedia.org/wiki/Mo
 The Model consists of the following components:
 
 
-@anchor R17_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/register.html<br>
-@anchor R20_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/login.html<br>
-@anchor R73_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/quiz.html<br>
 @anchor R23_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/questions_fetch.py<br>
 @anchor R79_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz_analysis.py<br>
 @anchor R104_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/app.py
 
 
 ## View
-<br>
-<br>
+
+The View consists of the following components: 
+
+@anchor R17_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/register.html<br>
+@anchor R20_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/login.html<br>
+@anchor R73_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/templates/quiz.html
+
 
 ## Controller
 
 The Controller consists of the following component:
 
 @anchor R68_0 https://github.com/WSUCEG-7140/Team-Beta/blob/main/instance/users.db
+
+
+## Forms
+
+We use csv file to store the questions. The csv file consists various types of questions.
+
+https://github.com/WSUCEG-7140/Team-Beta/blob/main/quiz.csv
